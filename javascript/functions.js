@@ -37,5 +37,40 @@ function monitorCount(rows, columns){
     return rows * columns;
   }
   
-  const numOfMonitors = monitorCount(5,4);
-  console.log(numOfMonitors)
+const numOfMonitors = monitorCount(5,4);
+console.log(numOfMonitors)
+
+
+//function expressions
+const plantNeedsWater = function(day){
+    if (day == 'Wednesday'){
+        return true;
+    } else {
+        return false;
+    }
+};
+  
+plantNeedsWater('Tuesday');
+  
+console.log(plantNeedsWater('Tuesday'));
+
+//arrow functions
+const plantNeedsWater2 = (day) => {
+    if (day === 'Wednesday') {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+const rectangleArea = (width, height) => {
+    let area = width * height;
+    return area;
+};
+
+const functionName1 = () => {};
+const functionName2 = paramOne => {};
+const functionName3 = (paramOne, paramTwo) => {};
+
+//for one line, implicit return
+const plantNeedsWater3 = day => day === 'Wednesday' ? true : false;
