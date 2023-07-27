@@ -135,3 +135,44 @@ e1 = Employee()
 e2 = Employee()
 e3 = Admin()
 e3.say_user_info()
+
+
+#ABSTRACTION
+from abc import ABC, abstractmethod
+
+class AbstractEmployee(ABC):
+  new_id = 1
+  def __init__(self):
+    self.id = AbstractEmployee.new_id
+    AbstractEmployee.new_id += 1
+
+  @abstractmethod
+  def say_id(self):
+    pass
+
+# Write your code below
+class Employee(AbstractEmployee):
+    def say_id(self):
+      print(self.id)
+
+e1 = Employee()
+e1.say_id()
+
+#SETTER GETTER DELETER
+class Animal:
+  def __init__(self, name):
+    self._name = name
+    self._age = None
+ 
+  def get_age(self):
+    return self._age
+ 
+  def set_age(self, new_age):
+    if isinstance(new_age, int):
+      self._age = new_age
+    else:
+      raise TypeError
+ 
+  def delete_age(self):
+    print("_age Deleted")
+    del self._age
